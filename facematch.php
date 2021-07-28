@@ -20,7 +20,7 @@
         ));
 
         $refImageUrl = "http://localhost/aws_facerecognition/Capture1.PNG";
-        $compareImage = "http://localhost/aws_facerecognition/".$matchimage; 
+        $compareImage = "http://localhost/aws_facerecognition/".$matchimage;
 
         $compareFaceResults= $rekognitionClient->compareFaces([
             'SimilarityThreshold' => $threshold,
@@ -35,7 +35,7 @@
 
     <style>
         #leftbox {
-        float:left; 
+        float:left;
         width:50%;
         height:280px;
         }
@@ -57,7 +57,7 @@
     <div id = 'boxes'>
         <div id = 'leftbox'>
             <img src='Capture1.png'/>
-        </div> 
+        </div>
         <div id = 'rightbox'>
             <img src='<?php echo $matchimage; ?>'/>
         </div>
@@ -67,7 +67,9 @@
     </div>
     <div>
         <?php
+            echo "<pre>";
             print_r($compareFaceResults);
+            echo "</pre>";
         ?>
     </div>
 </body>
